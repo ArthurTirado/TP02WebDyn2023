@@ -9,7 +9,12 @@
 <body>
     <header>
         <img src="img/brand.svg" alt="logo de la compagnie">
-        <a href=""></a>
+        <a href="cart.php"><img src="img/cart.svg"></a>
+        <?php if(is_empty_or_blank($user)) {?>
+        <a href="sign-in.php">Connexion</a>
+        <?php } else { ?>
+            <a href="sign-out.php">Se déconnecter</a>
+        <?php } ?>
     </header>
     <main>
 

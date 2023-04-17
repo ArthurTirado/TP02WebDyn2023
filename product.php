@@ -1,3 +1,3 @@
 <?php
-require once __DIR__.'/../product.php';
+require_once __DIR__.'/../html/product-view.php';
 ?>

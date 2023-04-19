@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 function connect_db() : PDO {
     try {
         return new PDO("mysql:host=localhost;dbname=baie_ourson", "student", "ubuntu", array(
@@ -11,14 +11,5 @@ function connect_db() : PDO {
     }
 }
 
-function return_product(PDO $db, string $sku) : array{
-    try {
-        $statement = $db->prepare("SELECT name, description, price FROM product WHERE sku = ?");
-        $statement->execute([$sku]);
-        return $statement->fetch();
-   
-    } catch (PDOException $e) {
-        return false;
-    }
-}
+
 ?>

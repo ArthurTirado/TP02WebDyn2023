@@ -15,10 +15,10 @@ class ProductDao
             $statement->execute([$sku]);
             return $statement->fetch();
         } catch (PDOException $e) {
-            exit("Unable to find sent sku from database :{$e->getMessage()}");
+            exit("Unable to find sent sku in database :{$e->getMessage()}");
         }
     }
-    
+    /* Bonne exemple
     public function findAllAnimesByKeywords(string $keywords) : array {
         try {
             $statement = $this->db->prepare("SELECT * FROM anime WHERE title LIKE ?");
@@ -27,5 +27,5 @@ class ProductDao
         } catch (PDOException $e) {
             exit("Unable to read animes from database :{$e->getMessage()}");
         }
-    }
+    }*/
 }

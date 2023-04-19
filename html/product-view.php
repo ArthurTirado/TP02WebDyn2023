@@ -1,3 +1,6 @@
+<?php
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,16 +15,16 @@
     </nav>
     <main>
         <div class="flex">
-            <img src="<? $img ?>" alt="<? $product ?>">
+            <img src="img/154789.png" alt="<?= $name ?>">
         </div>
         <div class="product-name">
-            <? $name ?>
+            <?= $name ?>
         </div>
         <div class="product-description">
-            <? $description ?>
+            <?= $description ?>
         </div>
         <div class="price">
-            <? $price ?>
+            <?= $price ?>
         </div>
         <form action="product.php" method="get">
             <input type="number">

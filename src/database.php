@@ -10,4 +10,6 @@ function connect_db() : PDO {
         exit("Unable to connect to database :{$e->getMessage()}");
     }
 }
+
+
 ?>

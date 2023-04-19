@@ -11,7 +11,7 @@ function connect_db() : PDO {
     }
 }
 
-function return_product(PDO $db, string $sku) : bool {
+function return_product(PDO $db, string $sku) : array{
     try {
         $statement = $db->prepare("SELECT name, description, price FROM product WHERE sku = ?");
         $statement->execute([$sku]);

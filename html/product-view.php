@@ -1,5 +1,7 @@
 <?php
-
+$name = $product["name"];
+$description = $product["description"];
+$price = $product["price"];
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -1,5 +1,4 @@
 <?php
-
 $user = "";
 
 function is_empty_or_blank($object) {

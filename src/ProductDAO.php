@@ -9,9 +9,9 @@ class ProductDao
         $this->db = $db;
     }
 
-    function return_product(PDO $db, string $sku) : bool {
+    function return_product(string $sku) : bool {
         try {
-            $statement = $db->prepare("SELECT name, description, price FROM product WHERE sku = ?");
+            $statement = $this->db->prepare("SELECT name, description, price FROM product WHERE sku = ?");
             $statement->execute([$sku]);
             return $statement->fetch();
         } catch (PDOException $e) {

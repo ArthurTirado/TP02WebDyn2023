@@ -1,9 +1,8 @@
 <?php
 
+require_once __DIR__."/src/database.php";
+require_once __DIR__."/src/ProductDAO.php";
+require_once __DIR__."/src/util.php";
 $user = "";
 
-function is_empty_or_blank($object) {
-    return trim($object) === "";
-}
-
-require_once __DIR__."/html/index-view.php";
+require_once __DIR__."/html/cart-view.php";

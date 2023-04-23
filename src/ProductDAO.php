@@ -9,13 +9,23 @@ class ProductDao
         $this->db = $db;
     }
 
-    function return_product(string $sku) : bool {
+    function return_product(string $sku) : array {
         try {
             $statement = $this->db->prepare("SELECT name, description, price FROM product WHERE sku = ?");
             $statement->execute([$sku]);
             return $statement->fetch();
         } catch (PDOException $e) {
             exit("Unable to find sent sku in database :{$e->getMessage()}");
+        }
+    }
+
+    function get_all_skus() : array {
+        try {
+            $statement = $this->db->prepare("SELECT sku FROM product");
+            $statement->execute();
+            return $statement->fetchAll();
+        } catch (PDOException $e) {
+            exit("Unable to get the skus from database :{$e->getMessage()}");
         }
     }
     /* Bonne exemple

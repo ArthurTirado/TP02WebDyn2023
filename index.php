@@ -9,6 +9,4 @@ $product_dao = new ProductDAO($db);
 $products = $product_dao->get_all_skus();
 $user = "";
 
-var_dump($products);
-
 require_once __DIR__."/html/index-view.php";

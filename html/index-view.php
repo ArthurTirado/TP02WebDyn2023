@@ -20,7 +20,15 @@
         </div>
     </header>
     <main>
-        
+        <?php foreach($products as $product){?>
+            <form action="product.php" method="GET">
+                <input class="invisible" type="text" name="sku" id="sku" value="<?= $product["sku"] ?>"/>
+                <input type="submit" value="">
+                    <img src="img/<?= $product["sku"] ?>.png" alt="image du produit"/>
+                    <h3><?= $product["name"] ?></h3>
+                </input>
+            </form>
+        <?php } ?>
     </main>
     <footer>
 

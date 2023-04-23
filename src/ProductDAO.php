@@ -21,7 +21,7 @@ class ProductDao
 
     function get_all_skus() : array {
         try {
-            $statement = $this->db->prepare("SELECT sku FROM product");
+            $statement = $this->db->prepare("SELECT * FROM product");
             $statement->execute();
             return $statement->fetchAll();
         } catch (PDOException $e) {

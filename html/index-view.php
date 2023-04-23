@@ -23,10 +23,11 @@
         <?php foreach($products as $product){?>
             <form action="product.php" method="GET">
                 <input class="invisible" type="text" name="sku" id="sku" value="<?= $product["sku"] ?>"/>
-                <input type="submit" value="">
+                <button type="submit">
                     <img src="img/<?= $product["sku"] ?>.png" alt="image du produit"/>
                     <h3><?= $product["name"] ?></h3>
-                </input>
+                    <p><?= $product["price"] ?>$</p>
+                </button>
             </form>
         <?php } ?>
     </main>

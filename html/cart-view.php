@@ -19,5 +19,19 @@
             <?php } ?>
         </div>
     </header>
+    <main>
+    <?php foreach($products as $product){?>
+            <form class="products-list-form" action="product.php" method="GET">
+                <input class="invisible" type="text" name="sku" id="sku" value="<?= $product["sku"] ?>"/>
+                <button class="products-list-line" type="submit">
+                    <img class="small-image" src="img/<?= $product["sku"] ?>.png" alt="image du produit"/>
+                    <div class="products-list-div">
+                        <h3><?= $product["name"] ?></h3>
+                        <p><?= $product["price"] ?> $</p>
+                    </div>
+                </button>
+            </form>
+        <?php } ?>
+    </main>
 </body>
 </html>

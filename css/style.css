@@ -4,12 +4,17 @@
 
 body {
     margin: 0;
+   
 }
 
 header {
     padding: 15px;
 }
-
+footer{
+    display: flex;
+    justify-content: center;
+    position: bottom;
+}
 .flex-space-between {
     display: flex;
     justify-content: space-between;
@@ -82,4 +87,26 @@ header {
 
 .products-list-div *{
     margin: 0;
+}
+.products{
+    max-width: 900px;
+    margin: auto;
+    font-family: sans-serif;
+}
+.product-image{
+    width: 500px;
+}
+.flex-product{
+    display: flex;
+    padding-top: 50px;
+}
+.product-name, .price{
+    font-size:medium
+}
+.product-description{
+    padding-top: 10px;
+}
+.price{
+    padding-top: 10px;
+    padding-bottom: 10px;
 }

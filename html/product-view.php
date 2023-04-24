@@ -25,22 +25,28 @@ $price = $product["price"];
         </div>
     </header>
     <main>
-        <div class="flex">
-            <img src="img/<?= $sku ?>.png" alt="<?= $name ?>">
+        <div class="products flex-product">
+            <div class="">
+                <img class="product-image" src="img/<?= $sku ?>.png" alt="<?= $name ?>">
+            </div>
+           <div class="">
+            <div class="product-name">
+                <strong>
+                <?= $name ?>
+                </strong>
+             </div>
+             <div class="product-description">
+                 <?= $description ?>
+             </div>
+             <div class="price">
+                 <strong><?= $price?>$</strong>
+             </div>
+             <form action="product.php" method="get">
+                 <input type="number">
+                 <input type="submit" value="Ajouter au panier">
+             </form>
+           </div>
         </div>
-        <div class="product-name">
-            <?= $name ?>
-        </div>
-        <div class="product-description">
-            <?= $description ?>
-        </div>
-        <div class="price">
-            <?= $price ?>
-        </div>
-        <form action="product.php" method="get">
-            <input type="number">
-            <input type="submit" value="Ajouter au panier">
-        </form>
     </main>
     <footer>
         <div>Copyright 2023 Arthur Tirado et Hugo Larochele</div>

@@ -42,8 +42,9 @@ $price = $product["price"];
                  <strong><?= $price?>$</strong>
              </div>
              <form action="cart.php" method="get">
-                 <input type="number">
-                 <input type="submit" value="Ajouter au panier">
+                <input class="invisible" type="text" name="sku" id="sku" value="<?= $sku ?>">
+                <input type="number" name="qte" id="qte">
+                <input type="submit" value="Ajouter au panier">
              </form>
            </div>
         </div>

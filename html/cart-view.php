@@ -21,17 +21,17 @@
     </header>
     <main>
     <?php foreach($products as $product){?>
-            <form class="products-list-form" action="product.php" method="GET">
-                <input class="invisible" type="text" name="sku" id="sku" value="154789"/>
-                <div class="products-list-line">
+            <form class="products-list-form flex-space-between" action="product.php" method="GET">
+                <div class="flex-space-between">
                     <img class="small-image" src="img/154789.png" alt="image du produit"/>
                     <div class="products-list-div">
                         <h3>Nom du test</h3>
                         <p>24.99 $</p>
                         <p>x2</p>
                     </div>
-                    <input class="cart-deleate" type="submit" value="Supprimer"/>
                 </div>
+                <input class="invisible" type="text" name="sku" id="sku" value="154789"/>
+                <input class="cart-deleate" type="submit" value="Supprimer"/>
             </form>
         <?php } ?>
     </main>

@@ -18,8 +18,7 @@ $user = "";/*
 $db = connect_db();
 $cart_dao = new CartDAO($db);
 $product_dao = new ProductDAO($db);
-$user = "Merlin";
-$sku = $_GET["sku"] ?? "";*/
+$user = "Merlin";*/
 
 
 require_once __DIR__."/html/cart-view.php";

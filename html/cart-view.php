@@ -22,14 +22,16 @@
     <main>
     <?php foreach($products as $product){?>
             <form class="products-list-form" action="product.php" method="GET">
-                <input class="invisible" type="text" name="sku" id="sku" value="<?= $product["sku"] ?>"/>
-                <button class="products-list-line" type="submit">
-                    <img class="small-image" src="img/<?= $product["sku"] ?>.png" alt="image du produit"/>
+                <input class="invisible" type="text" name="sku" id="sku" value="154789"/>
+                <div class="products-list-line">
+                    <img class="small-image" src="img/154789.png" alt="image du produit"/>
                     <div class="products-list-div">
-                        <h3><?= $product["name"] ?></h3>
-                        <p><?= $product["price"] ?> $</p>
+                        <h3>Nom du test</h3>
+                        <p>24.99 $</p>
+                        <p>x2</p>
                     </div>
-                </button>
+                    <input class="cart-deleate" type="submit" value="Supprimer"/>
+                </div>
             </form>
         <?php } ?>
     </main>

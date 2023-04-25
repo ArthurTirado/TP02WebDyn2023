@@ -43,7 +43,7 @@ $price = $product["price"];
              </div>
              <form action="cart.php" method="get">
                 <input class="invisible" type="text" name="sku" id="sku" value="<?= $sku ?>">
-                <input type="number" name="qte" id="qte">
+                <input type="number" name="qte" id="qte" value="1" min="1">
                 <input type="submit" value="Ajouter au panier">
              </form>
            </div>

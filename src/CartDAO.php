@@ -1,5 +1,7 @@
 <?php declare(strict_types=1);
 
+require_once __DIR__."/src/CartItemDAO.php";
+
 if(!isset($_SESSION["user"])){
     session_start();
 }
@@ -13,22 +15,42 @@ class CartDao
     public function __construct(PDO $db)
     {
         $this->db = $db;
-        $this->cart[] = $_SESSION["cart"] ?? [];
+        $this->cart = $_SESSION["cart"] ?? [];
     }
     
-    function is_item_already_in_cart($sku){
-        return isset($this->cart[$sku]);
+    function is_item_already_in_cart($sku): bool {
+        for($cart as $item){
+            if($item->get_sku() === $sku){
+                return true;
+            }
+        }
+        return false;
     }
 
     function add_item_to_cart(string $sku, int $qte) {
         if($this->is_item_already_in_cart($sku)){
-            $this->cart[$sku] = get_quantity_from_session($sku) + $qte;
+            $this->cart[get_cart_item_index($sku)]->add_qte($qte);
         } else{
-            $this->cart[] = [$sku => "$qte"];
+            $this->cart[] = new CartItemDAO($sku, $qte);
         }
     }
 
+    function get_cart_items(): array {
+        return $this->cart;
+    }
+    
+    function get_cart_item_index(string $sku): int {
+        if($this->is_item_already_in_cart($sku)){
+            for($i = 0; $i < sizeof($cart); $i++){
+                if($cart[$i]->get_sku() === $sku){
+                    return $i;
+                }
+            }
+        }
+        return null;
+    }
+
     function get_quantity_from_session(string $searchedSku) : int {
-        return intval($cart[$searchedSku]);
+        return intval($cart[get_cart_item_index($searchedSku)]->get_qte());
     }
 }

@@ -21,7 +21,7 @@ footer{
     justify-content: space-between;
 }
 
-.blue-button {
+.connect {
     text-decoration: none;
     color: #000000;
     background: #b8e1ff;
@@ -33,7 +33,7 @@ footer{
     text-align: center;
 }
 
-.grey-button {
+.disconnect {
     text-decoration: none;
     color: #000000;
     background: #eee;
@@ -131,4 +131,8 @@ footer{
     font-weight: bold;
     border-radius: 0.5rem;
     margin-bottom: auto;
+}
+
+.global-margin{
+    margin: 1rem;
 }

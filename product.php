@@ -1,6 +1,8 @@
 <?php
 
-session_start();
+if(!isset($_SESSION["user"])){
+    session_start();
+}
 
 require_once __DIR__."/src/database.php";
 require_once __DIR__."/src/ProductDAO.php";

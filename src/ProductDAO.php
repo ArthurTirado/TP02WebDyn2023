@@ -28,14 +28,4 @@ class ProductDao
             exit("Unable to get the skus from database :{$e->getMessage()}");
         }
     }
-    /* Bonne exemple
-    public function findAllAnimesByKeywords(string $keywords) : array {
-        try {
-            $statement = $this->db->prepare("SELECT * FROM anime WHERE title LIKE ?");
-            $statement->execute(["%$keywords%"]);
-            return $statement->fetchAll();
-        } catch (PDOException $e) {
-            exit("Unable to read animes from database :{$e->getMessage()}");
-        }
-    }*/
 }

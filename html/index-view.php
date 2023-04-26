@@ -15,7 +15,7 @@
             <?php if(is_null_or_blank($user)) {?>
                 <a href="sign-in.php" class="blue-button">Connexion</a>
             <?php } else { ?>
-                <a href="sign-out.php">Se déconnecter</a>
+                <a href="sign-out.php" class="grey-button">Se déconnecter</a>
             <?php } ?>
         </div>
     </header>

@@ -19,7 +19,7 @@ $products = $product_dao->get_all_skus();
 $sku = $_GET["sku"] ?? "";
 $qte = $_GET["qte"] ?? 0;
 if(!is_null_or_blank("sku")){
-    $cart_dao->add_item_to_cart($sku, $qte);
+    $cart_dao->add_item_to_cart($sku, intval($qte));
 }
 
 require_once __DIR__."/html/index-view.php";

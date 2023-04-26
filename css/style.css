@@ -112,15 +112,16 @@ footer{
     display: flex;
     padding-top: 50px;
 }
-.product-name, .price{
-    font-size:medium
+.product-name{
+    font-size: x-large
 }
 .product-description{
     padding-top: 10px;
 }
 .price{
-    padding-top: 10px;
-    padding-bottom: 10px;
+    font-size: xx-large;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .cart-deleate{
@@ -132,7 +133,12 @@ footer{
     border-radius: 0.5rem;
     margin-bottom: auto;
 }
-
 .global-margin{
     margin: 1rem;
 }
+@media(max-width:600px){
+    .products {
+      flex-direction: column;
+      align-items: center;
+    }
+  }

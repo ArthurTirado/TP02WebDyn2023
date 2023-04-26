@@ -9,7 +9,7 @@ class CartItemDao
 {
     private PDO $db;
     private $sku;
-    private $qte
+    private $qte;
 
     public function __construct(PDO $db, string $sku, int $qte)
     {
@@ -22,8 +22,8 @@ class CartItemDao
         return $this->sku;
     }
     
-    public function get_qte(): string {
-        return $this->qte;
+    public function get_qte(): int {
+        return  $this->qte;
     }
 
     public function add_qte(int $qte_to_add) {

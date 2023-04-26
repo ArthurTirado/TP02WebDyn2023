@@ -39,9 +39,12 @@
             </form>
             <?php } ?>
             <h1>Sous-total</h1>
-            <h1><?= $total_price ?> $</h1>
-            <a href="checkout.php">Passer la commande</a>
+            <h1 class="total-price"><?= $total_price ?> $</h1>
+            <a href="checkout.php" class="command-pass">Passer la commande</a>
         <?php } ?>
     </main>
+    <footer>
+        <div>Copyright 2023 Arthur Tirado et Hugo Larochele</div>
+    </footer>
 </body>
 </html>

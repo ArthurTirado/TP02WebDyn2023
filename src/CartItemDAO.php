@@ -4,8 +4,6 @@ class CartItemDao
 {
     private $sku;
     private $qte;
-    private $qte;
-
     public function __construct(string $sku, int $qte)
     {
         $this->sku = $sku;

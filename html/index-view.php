@@ -34,7 +34,7 @@
         <?php } ?>
     </main>
     <footer>
-
+        <div>Copyright 2023 Arthur Tirado et Hugo Larochele</div>
     </footer>
 </body>
 </html>

@@ -1,5 +1,8 @@
 <?php declare(strict_types=1);
 
+require_once __DIR__."/CartDAO.php";
+require_once __DIR__."/CartItemDAO.php";
+
 class ProductDao
 {
     private PDO $db;
@@ -28,4 +31,32 @@ class ProductDao
             exit("Unable to get the skus from database :{$e->getMessage()}");
         }
     }
+
+    function get_cart_products_skus(array $cart_items) : array {
+        $products = [];
+        try {
+            for($i = 0; $i < sizeof($cart_items); $i++){
+                $statement = $this->db->prepare("SELECT * FROM product WHERE sku = ?");
+                $statement->execute([array_keys($cart_items)[$i]]);
+                $products[] = $statement->fetch();
+            }
+            return $products;
+        } catch (PDOException $e) {
+            exit("Unable to get the skus from database :{$e->getMessage()}");
+        }
+    }
+    /*
+    function get_cart_products_skus(array $cart_items) : array {
+        $products = [];
+        try {
+            foreach($cart_items as $item){
+                $statement = $this->db->prepare("SELECT * FROM product WHERE sku = ?");
+                $statement->execute([$item->get_sku()]);
+                $products[] = $statement->fetchAll();
+            }
+            return $products;
+        } catch (PDOException $e) {
+            exit("Unable to get the skus from database :{$e->getMessage()}");
+        }
+    }*/
 }

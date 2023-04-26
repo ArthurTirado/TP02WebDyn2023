@@ -2,55 +2,47 @@
 
 require_once __DIR__."/CartItemDAO.php";
 
-if(!isset($_SESSION["user"])){
-    session_start();
-}
-
-
 class CartDao
 {
-    private PDO $db;
-    private $cart;
+    private $items;
 
-    public function __construct(PDO $db)
+    public function __construct()
     {
-        $this->db = $db;
-        $this->cart = $_SESSION["cart"] ?? [];
-    }
-    
-    function is_item_already_in_cart($sku): bool {
-        foreach($this->cart as $item){
-            if($item->get_sku() === $sku){
-                return true;
-            }
+        if(!isset($_SESSION["cart"])){
+            $this->items = array();
+        } else {
+            $this->items = $_SESSION["cart"];
         }
-        return false;
+    }
+
+    function is_item_already_in_cart($sku): bool {
+        return isset($this->items[$sku]);
     }
 
     function add_item_to_cart(string $sku, int $qte) {
         if($this->is_item_already_in_cart($sku)){
-            $this->cart[$this->get_cart_item_index($sku)]->add_qte($qte);
-        } else{
-            $this->cart[] = new CartItemDAO($this->db,$sku, $qte);
+            $this->items[$sku] += $qte;
+            $_SESSION["cart"] = $this->items;
+        } else {
+            $this->items[$sku] = $qte;
+            $_SESSION["cart"] = $this->items;
         }
     }
 
     function get_cart_items(): array {
-        return $this->cart;
-    }
-    
-    function get_cart_item_index(string $sku): int {
-        if($this->is_item_already_in_cart($sku)){
-            for($i = 0; $i < sizeof($this->cart); $i++){
-                if($this->cart[$i]->get_sku() === $sku){
-                    return $i;
-                }
-            }
-        }
-        return null;
+        return $this->items;
     }
 
-    function get_quantity_from_session(string $searchedSku) : int {
-        return intval($this->cart[$this->get_cart_item_index($searchedSku)]->get_qte());
+    function get_total_price(array $products): float {
+        $total_price = 0;
+        foreach($products as $product){
+            $total_price += $this->items[$product["sku"]]*$product["price"];
+        }
+        return $total_price;
+    }
+
+    function remove(string $sku){
+        unset($this->items[$sku]);
+        $_SESSION["cart"] = $this->items;
     }
 }

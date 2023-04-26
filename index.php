@@ -13,7 +13,7 @@ if(!isset($_SESSION["user"])){
 
 $user = "Test";
 $_SESSION["user"] = $user;
-
+$user = "";
 $db = connect_db();
 $product_dao = new ProductDao($db);
 $cart_dao = new CartDao($db);

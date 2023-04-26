@@ -127,7 +127,6 @@ footer{
 
 .default-button, .default-input{
     height: 48px;
-    min-width: 100px;
     border: none;
     font-size: medium;
     font-weight: bold;
@@ -141,13 +140,14 @@ footer{
     background-color: #eee;
 }
 .default-input{
- border: 3px solid #eee;
+    border: 3px solid #eee;
+    width: 160px;
 }
 .global-margin{
     margin: 1rem;
 }
 @media(max-width:900px){
-    .products {
+    .flex-product {
       flex-direction: column;
       align-items: center;
     }

@@ -1,19 +1,12 @@
 <?php declare(strict_types=1);
 
-if(!isset($_SESSION["user"])){
-    session_start();
-}
-
-
 class CartItemDao
 {
-    private PDO $db;
     private $sku;
-    private $qte
+    private $qte;
 
-    public function __construct(PDO $db, string $sku, int $qte)
+    public function __construct(string $sku, int $qte)
     {
-        $this->db = $db;
         $this->sku = $sku;
         $this->qte = $qte;
     }
@@ -22,7 +15,7 @@ class CartItemDao
         return $this->sku;
     }
     
-    public function get_qte(): string {
+    public function get_qte(): int {
         return $this->qte;
     }
 

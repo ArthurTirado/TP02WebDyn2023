@@ -21,7 +21,7 @@
     </header>
     <main class="global-margin">
         <h1>Votre panier</h1>
-        <?php if(!isset($cart)){ ?>
+        <?php if(sizeof($cart_items) === 0){ ?>
             <p>Votre panier est vide.</p>
         <?php } else {
             foreach($products as $product){?>
@@ -39,7 +39,7 @@
             </form>
             <?php } ?>
             <h1>Sous-total</h1>
-            <h1><?= $totalPrice ?> $</h1>
+            <h1><?= $total_price ?> $</h1>
             <a href="checkout.php">Passer la commande</a>
         <?php } ?>
     </main>

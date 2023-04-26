@@ -35,7 +35,7 @@
                     </div>
                 </div>
                 <input class="invisible" type="text" name="sku" id="sku" value="<?= $product["sku"] ?>"/>
-                <input class="cart-deleate" type="submit" value="Supprimer"/>
+                <input class="default-button" type="submit" value="Supprimer"/>
             </form>
             <?php } ?>
             <h1>Sous-total</h1>

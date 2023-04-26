@@ -124,7 +124,7 @@ footer{
     padding-bottom: 20px;
 }
 
-.cart-deleate{
+.default-button, .default-input{
     height: 48px;
     min-width: 100px;
     border: none;
@@ -132,6 +132,15 @@ footer{
     font-weight: bold;
     border-radius: 0.5rem;
     margin-bottom: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.default-button{
+    background-color: #eee;
+}
+.default-input{
+ border: 3px solid #eee;
 }
 .global-margin{
     margin: 1rem;

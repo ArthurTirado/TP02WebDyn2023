@@ -40,4 +40,9 @@ class CartDao
         }
         return $total_price;
     }
+
+    function remove(string $sku){
+        unset($this->items[$sku]);
+        $_SESSION["cart"] = $this->items;
+    }
 }

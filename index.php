@@ -19,7 +19,7 @@ $product_dao = new ProductDao($db);
 $cart_dao = new CartDao($db);
 $products = $product_dao->get_all_skus();
 $sku = $_GET["sku"] ?? "";
-$qte = $_GET["qte"] ?? 0;
+$qte = intval($_GET["qte"] ?? 0);
 if(!is_null_or_blank($sku)){
     $cart_dao->add_item_to_cart($sku, $qte);
 }

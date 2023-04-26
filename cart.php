@@ -13,9 +13,11 @@ $db = connect_db();
 $cart_dao = new CartDao();
 $product_dao = new ProductDao($db);
 $user = "Merlin";
+$sku = $_GET["sku"] ?? "";
 
 $cart_items = $cart_dao->get_cart_items();
 $products = $product_dao->get_cart_products_skus($cart_items);
 $total_price = $cart_dao->get_total_price($products);
+$cart_dao->remove($sku);
 
 require_once __DIR__."/html/cart-view.php";

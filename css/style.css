@@ -72,6 +72,10 @@ footer{
     overflow: hidden;
 }
 
+.products{
+    justify-items: center;
+}
+
 .products-list-form{
     display: flex;
     align-items: center;
@@ -101,9 +105,6 @@ footer{
 
 .products-list-div *{
     margin: 0;
-}
-.products{
-    max-width: 900px;
 }
 .product-image{
     width: 500px;

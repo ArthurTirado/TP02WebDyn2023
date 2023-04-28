@@ -50,7 +50,7 @@ $price = $product["price"];
         </div>
     </main>
     <footer>
-        <div>Copyright 2023 Arthur Tirado et Hugo Larochele</div>
+        <div>Copyright 2023 Arthur Tirado et Hugo Larochelle</div>
     </footer>
 </body>
 </html>

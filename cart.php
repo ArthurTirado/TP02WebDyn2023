@@ -9,11 +9,7 @@ if(!isset($_SESSION["user"])){
     session_start();
 }
 
-if(!isset($_SESSION["cart"])){
-    $cart = new Cart();
-} else {
-    $cart = $_SESSION["cart"];
-}
+$cart = $_SESSION["cart"];
 
 $db = connect_db();
 $product_dao = new ProductDao($db);

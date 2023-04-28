@@ -32,6 +32,17 @@ class CartTest extends TestCase
         $this->assertEquals($expected, $newCart->get_cart_items());
     }
 
+    public function testCanAddQteIfItemInCart(){
+        //Arrange
+        $newCart = new Cart();
+        $newCart->add_item_to_cart(Self::RDM_SKU, Self::RDM_QTE);
+        $expected = array(Self::RDM_SKU => Self::RDM_QTE*2);
+        //Act
+        $newCart->add_item_to_cart(Self::RDM_SKU, Self::RDM_QTE);
+        //Assert
+        $this->assertEquals($expected, $newCart->get_cart_items());
+    }
+
     public function testShouldDetectSkuInItems(){
         //Arrange
         $newCart = new Cart();
@@ -60,16 +71,21 @@ class CartTest extends TestCase
         $newCart = new Cart();
         $newCart->add_item_to_cart(Self::BD_SKU, Self::RDM_QTE);
         $products = $product_dao->get_cart_products_skus($newCart->get_cart_items());
-        $actual = Self::BD_SKU_PRICE * Self::RDM_QTE;
+        $expected = Self::BD_SKU_PRICE * Self::RDM_QTE;
         //Act
-        $expected = $newCart->get_total_price($products);
+        $actual = $newCart->get_total_price($products);
         //Assert
         $this->assertEquals($expected, $actual);
     }
 
     public function testCanRemoveItemFromCart(){
+        //Arrange
         $newCart = new Cart();
         $newCart->add_item_to_cart(Self::RDM_SKU, Self::RDM_QTE);
-
+        $expected = array();
+        //Act
+        $newCart->remove(Self::RDM_SKU);
+        //Assert
+        $this->assertEquals($expected, $newCart->get_cart_items());
     }
 }

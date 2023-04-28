@@ -25,11 +25,11 @@ $price = $product["price"];
         </div>
     </header>
     <main class="global-margin">
-        <div class="flex-product">
-            <div class="">
+        <div class="products flex-product">
+            <div>
                 <img class="product-image" src="img/<?= $sku ?>.png" alt="<?= $name ?>">
             </div>
-           <div class="">
+           <div>
             <div class="product-name">
                 <strong>
                 <?= $name ?>
@@ -44,7 +44,7 @@ $price = $product["price"];
              <form action="index.php" method="get">
                 <input class="invisible" type="text" name="sku" id="sku" value="<?= $sku ?>">
                 <input type="number" class="default-input" name="qte" id="qte" value="1" min="1">
-                <input type="submit" class="default-button" value="Ajouter au panier">
+                <input type="submit" class="default-button small-button" value="Ajouter au panier">
              </form>
            </div>
         </div>

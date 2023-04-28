@@ -1,7 +1,7 @@
 <?php declare(strict_types=1);
 
-require_once __DIR__."/CartDAO.php";
-require_once __DIR__."/CartItemDAO.php";
+require_once __DIR__."/Cart.php";
+require_once __DIR__."/CartItem.php";
 
 class ProductDao
 {
@@ -38,7 +38,10 @@ class ProductDao
             for($i = 0; $i < sizeof($cart_items); $i++){
                 $statement = $this->db->prepare("SELECT * FROM product WHERE sku = ?");
                 $statement->execute([array_keys($cart_items)[$i]]);
-                $products[] = $statement->fetch();
+                $product = $statement->fetch();
+                if(!empty($product)){
+                    $products[] = $product;
+                }
             }
             return $products;
         } catch (PDOException $e) {

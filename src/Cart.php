@@ -1,17 +1,15 @@
 <?php declare(strict_types=1);
 
-require_once __DIR__."/CartItemDAO.php";
+require_once __DIR__."/CartItem.php";
 
-class CartDao
+class Cart
 {
     private $items;
 
     public function __construct()
     {
-        if(!isset($_SESSION["cart"])){
+        if(!isset($items)){
             $this->items = array();
-        } else {
-            $this->items = $_SESSION["cart"];
         }
     }
 
@@ -22,10 +20,8 @@ class CartDao
     function add_item_to_cart(string $sku, int $qte) {
         if($this->is_item_already_in_cart($sku)){
             $this->items[$sku] += $qte;
-            $_SESSION["cart"] = $this->items;
         } else {
             $this->items[$sku] = $qte;
-            $_SESSION["cart"] = $this->items;
         }
     }
 
@@ -43,6 +39,5 @@ class CartDao
 
     function remove(string $sku){
         unset($this->items[$sku]);
-        $_SESSION["cart"] = $this->items;
     }
 }

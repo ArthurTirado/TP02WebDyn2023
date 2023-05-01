@@ -73,7 +73,15 @@ footer{
 }
 
 .products{
+    display: flex;
     justify-items: center;
+    align-items: center;
+    width: 900px;
+    margin: 0 auto;
+}
+
+.restrained-width{
+    width: 180px;
 }
 
 .products-list-form{

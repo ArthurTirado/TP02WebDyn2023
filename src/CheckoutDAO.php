@@ -11,41 +11,39 @@ class CheckoutDao
         $this->db = $db;
     }
 
-    function add_order(string $sku) {
+    function add_order(int $user_id) {
         try {
             $this->db->beginTransaction();
             $statement = $this->db->prepare("INSERT INTO `order`(user_id) VALUES (?)");
             $statement->execute([$user_id]);
             $this->db->commit();
         } catch (PDOException $e) {
+            $this->db->rollBack();
             exit("Unable to add order into database :{$e->getMessage()}");
         }
     }
 
-    function get_all_skus() : array {
+    function get_order_id(int $user_id){
         try {
-            $statement = $this->db->prepare("SELECT * FROM product");
-            $statement->execute();
-            return $statement->fetchAll();
+            $this->db->beginTransaction();
+            $statement = $this->db->prepare("SELECT id FROM `order` WhERE user_id = ?");
+            $statement->execute([$user_id]);
+            $this->db->commit();
         } catch (PDOException $e) {
-            exit("Unable to get the skus from database :{$e->getMessage()}");
+            $this->db->rollBack();
+            exit("Unable to add order into database :{$e->getMessage()}");
         }
     }
 
-    function get_cart_products_skus(array $cart_items) : array {
-        $products = [];
+    function add_order_item(int $order_id, string $sku, int $qte){
         try {
-            for($i = 0; $i < sizeof($cart_items); $i++){
-                $statement = $this->db->prepare("SELECT * FROM product WHERE sku = ?");
-                $statement->execute([array_keys($cart_items)[$i]]);
-                $product = $statement->fetch();
-                if(!empty($product)){
-                    $products[] = $product;
-                }
-            }
-            return $products;
+            $this->db->beginTransaction();
+            $statement = $this->db->prepare("INSERT INTO `order`(order_id, product_sku, quantity) VALUES (?,?,?)");
+            $statement->execute([$order_id, $sku, $qte]);
+            $this->db->commit();
         } catch (PDOException $e) {
-            exit("Unable to get the skus from database :{$e->getMessage()}");
+            $this->db->rollBack();
+            exit("Unable to add order into database :{$e->getMessage()}");
         }
     }
 }

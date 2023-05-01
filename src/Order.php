@@ -2,7 +2,7 @@
 
 require_once __DIR__."/CartItem.php";
 
-class Cart
+class Order
 {
     private $items;
 

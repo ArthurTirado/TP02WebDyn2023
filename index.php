@@ -6,14 +6,14 @@ require_once __DIR__."/src/Order.php";
 require_once __DIR__."/src/CartItem.php";
 require_once __DIR__."/src/util.php";
 
+session_start();
+
 if(!isset($_SESSION["user"])){
-    session_start();
+    $_SESSION["user"] = "";
 }
 
-$user = "Test";
-$_SESSION["user"] = $user;
-
-$cart = $_SESSION["cart"] ?? new Cart();
+$user = $_SESSION["user"];
+$cart = $_SESSION["cart"] ?? new Order();
 
 $db = connect_db();
 $product_dao = new ProductDao($db);

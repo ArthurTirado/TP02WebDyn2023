@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Acceuil</title>
+    <title>Confirmation</title>
 </head>
 <body>
     <header class="flex-space-between bottom-border">
@@ -19,19 +19,9 @@
             <?php } ?>
         </div>
     </header>
-    <main>
-        <?php foreach($products as $product){?>
-            <form class="products-list-form" action="product.php" method="GET">
-                <input class="invisible" type="text" name="sku" id="sku" value="<?= $product["sku"] ?>"/>
-                <button class="products-list-line" type="submit">
-                    <img class="small-image" src="img/<?= $product["sku"] ?>.png" alt="image du produit"/>
-                    <div class="products-list-div">
-                        <h3><?= $product["name"] ?></h3>
-                        <p><?= $product["price"] ?> $</p>
-                    </div>
-                </button>
-            </form>
-        <?php } ?>
+    <main class="flex confirm">
+        <h2>Merci pour votre commande <?php$name $last_name?> !</h2>
+        <a href="index.php" class="button blue-button continue-button">Continuer de magasiner</a>
     </main>
     <footer>
         <div>Copyright 2023 Arthur Tirado et Hugo Larochelle</div>

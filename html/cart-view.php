@@ -11,11 +11,11 @@
     <header class="flex-space-between bottom-border">
         <a href="index.php"><img src="img/brand.svg" alt="logo de la compagnie"></a>
         <div class="flex-space-between">
-            <a href="cart.php"><img class="shopping-cart" src="img/cart.svg"></a>
+            <a href="cart.php"><img class="button grey-button shopping-cart" src="img/cart.svg"></a>
             <?php if(is_null_or_blank($user)) {?>
-                <a href="sign-in.php" class="connect">Connexion</a>
+                <a href="sign-in.php" class="button blue-button connect">Connexion</a>
             <?php } else { ?>
-                <a href="sign-out.php" class="disconnect">Se déconnecter</a>
+                <a href="sign-out.php" class="button grey-button disconnect">Se déconnecter</a>
             <?php } ?>
         </div>
     </header>

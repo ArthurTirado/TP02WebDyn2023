@@ -2,7 +2,7 @@
 
 require_once __DIR__."/Order.php";
 
-class ProductDao
+class CheckoutDao
 {
     private PDO $db;
 
@@ -11,13 +11,14 @@ class ProductDao
         $this->db = $db;
     }
 
-    function return_product(string $sku) : array {
+    function add_order(string $sku) {
         try {
-            $statement = $this->db->prepare("SELECT name, description, price FROM product WHERE sku = ?");
-            $statement->execute([$sku]);
-            return $statement->fetch();
+            $this->db->beginTransaction();
+            $statement = $this->db->prepare("INSERT INTO `order`(user_id) VALUES (?)");
+            $statement->execute([$user_id]);
+            $this->db->commit();
         } catch (PDOException $e) {
-            exit("Unable to find sent sku in database :{$e->getMessage()}");
+            exit("Unable to add order into database :{$e->getMessage()}");
         }
     }
 

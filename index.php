@@ -2,7 +2,7 @@
 
 require_once __DIR__."/src/database.php";
 require_once __DIR__."/src/ProductDAO.php";
-require_once __DIR__."/src/Cart.php";
+require_once __DIR__."/src/Order.php";
 require_once __DIR__."/src/CartItem.php";
 require_once __DIR__."/src/util.php";
 
@@ -23,7 +23,7 @@ $qte = intval($_GET["qte"] ?? 0);
 
 if(!is_null_or_blank($sku)){
     $cart->add_item_to_cart($sku, $qte);
-    $_SESSION["cart"] = $cart;
 }
+$_SESSION["cart"] = $cart;
 
 require_once __DIR__."/html/index-view.php";

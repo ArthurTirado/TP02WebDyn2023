@@ -33,6 +33,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (is_null_or_empty($password)) {
         $errors[] = "Le mot de passe est requis.";
     }
+    if (is_null_or_empty($first_name)) {
+        $errors[] = "Le prénom est requis.";
+    }
+    if (is_null_or_empty($last_name)) {
+        $errors[] = "Le nom est requis.";
+    }
+    if (is_null_or_empty($shipping)) {
+        $errors[] = "L'adresse est requis.";
+    }
     else if (is_null_or_empty($password_confirmation)) {
         $errors[] = "La confirmation du mot de passe est requise.";
     }

@@ -13,6 +13,16 @@
             <img src="img/brand-large.svg" alt="logo de la compagnie">
             <h2>Connexion</h2>
             <div>Utiliser votre compte Ourson</div>
+            <?php if (!empty($errors)) { ?>
+                <div class="alert" role="alert">
+                    <h4 class="alert-heading">Erreur</h4>
+                    <ul>
+                        <?php foreach ($errors as $error) { ?>
+                            <li><?= $error ?></li>
+                        <?php } ?>
+                    </ul>
+                </div>
+            <?php } ?>
             <form action="sign-in.php" method="get" class="sign-in-form">
                <div class="flex">
                 <div>
@@ -20,8 +30,8 @@
                   <label class="block-label"for="password">Mot de passe:</label>
                 </div>
                 <div>
-                 <input class="default-input block-form" type="text" name="email" id="email" placeholder="Adresse de courriel" required>
-                  <input class="default-input block-form" type="password" name="password" id="password" placeholder="********" required>
+                 <input class="default-input block-form" type="text" name="email" id="email" placeholder="Adresse de courriel">
+                  <input class="default-input block-form" type="password" name="password" id="password" placeholder="********">
                 </div>
                </div>
               <div class="flex-space-between">

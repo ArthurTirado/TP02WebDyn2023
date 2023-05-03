@@ -8,43 +8,35 @@
     <title>Connexion</title>
 </head>
 <body>
-    <main class="disconnect-main">
-        <div class="connect-block">
-            <img src="img/brand-large.svg" alt="logo de la compagnie">
-            <h2>Connexion</h2>
-            <div>Utiliser votre compte Ourson</div>
-            <form action="sign-in.php" method="get" class="sign-in-form">
-               <div class="flex">
-                    <div>
-                        <label class="block-label" for="email">Email:</label>
-                        <label class="block-label"for="password">Mot de passe:</label>
-                        <label class="block-label"for="confirm-password">Confirmation du mot de passe:</label>
-                    </div>
-                    <div>
-                        <input class="default-input block-form" type="text" name="email" id="email" placeholder="Adresse de courriel" required>
-                        <input class="default-input block-form" type="password" name="password" id="password" placeholder="********" required>
-                        <input class="default-input block-form" type="confirm-password" name="confirm-password" id="password" placeholder="********" required>
-                    </div>
-                </div>
-        
-                <div class="flex">
-                    <div>
-                         <label class="block-label"for="first-name">Prénom:</label>                  
-                        <label class="block-label"for="last-name">Nom:</label>
-                        <label class="block-label"for="shipping">Adresse de livraison:</label>
-                    </div>
-                    <div>
-                        <input class="default-input block-form" type="text" name="first-name" id="first-name" placeholder="Prénom" required>
-                        <input class="default-input block-form" type="text" name="last-name" id="last-name" placeholder="Nom" required>
-                        <input class="default-input block-form" type="text" name="shipping" id="shipping" placeholder="Adresse de Livraison" required>
-                    </div>
-                </div>
-              <div class="flex-space-between">
-                 <a href="sign-up.php">Créer une compte</a>
-                 <input type="submit" class="default-button" value="Se connecter">
-              </div>
-            </form>
-        </div>
+    <main class="sign-up-main">
+        <form action="sign-in.php" method="post" class="sign-up-form">
+            <img class="sign-up-form-logo grid-col-2" src="img/brand-large.svg" alt="logo de la compagnie">
+            <h1 class="text-center grid-col-2">Connexion</h1>
+            <div class="text-center grid-col-2">Utiliser votre compte Ourson</div>
+            <h2 class="grid-col-2">Informations sur le compte</h2>
+
+            <label class="" for="email">Email:</label>
+            <input class="default-input" type="text" name="email" id="email" placeholder="Adresse de courriel" required>
+            
+            <label class=""for="password">Mot de passe:</label>
+            <input class="default-input" type="password" name="password" id="password" placeholder="********" required>
+            
+            <label class=""for="confirm-password">Confirmation du mot de passe:</label>
+            <input class="default-input" type="confirm-password" name="confirm-password" id="confirm-password" placeholder="********" required>
+
+            <h2 class="grid-col-2">lol</h2>
+
+            <label class=""for="first-name">Prénom:</label>                  
+            <input class="default-input" type="text" name="first-name" id="first-name" placeholder="Prénom" required>
+            
+            <label class=""for="last-name">Nom:</label>
+            <input class="default-input" type="text" name="last-name" id="last-name" placeholder="Nom" required>
+            
+            <label class=""for="shipping">Adresse de livraison:</label>
+            <input class="default-input" type="text" name="shipping" id="shipping" placeholder="Adresse de Livraison" required>
+            
+            <input type="submit" class="default-button grid-col-2" value="Créer un compte">
+        </form>
     </main>
     <footer>
         <div>Copyright 2023 Arthur Tirado et Hugo Larochelle</div>

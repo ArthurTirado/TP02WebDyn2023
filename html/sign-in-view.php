@@ -35,7 +35,7 @@
                 </div>
                </div>
               <div class="flex-space-between">
-                 <a href="sign-up.php">Créer une compte</a>
+                 <a href="sign-in.php">Créer une compte</a>
                  <input type="submit" class="default-button" value="Se connecter">
               </div>
             </form>

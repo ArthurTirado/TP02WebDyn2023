@@ -13,6 +13,16 @@
             <img class="sign-up-form-logo grid-col-2" src="img/brand-large.svg" alt="logo de la compagnie">
             <h1 class="text-center grid-col-2">Connexion</h1>
             <div class="text-center grid-col-2">Utiliser votre compte Ourson</div>
+            <?php if (!empty($errors)) { ?>
+                <div class="alert">
+                    <h4 class="alert-heading">Erreur</h4>
+                    <ul>
+                        <?php foreach ($errors as $error) { ?>
+                            <li><?= $error ?></li>
+                        <?php } ?>
+                    </ul>
+                </div>
+            <?php } ?>
             <h2 class="grid-col-2">Informations sur le compte</h2>
 
             <label for="email">Email:</label>

@@ -16,13 +16,13 @@ $db = connect_db();
 $userDAO = new UserDao($db);
 
 // Validation du formulaire.
-if ($_SERVER["REQUEST_METHOD"] === "GET") {
-    $email = $_GET["email"] ?? null;
-    $password = $_GET["password"] ?? null;
-    $password_confirmation = $_GET["password_confirmation"] ?? null;
-    $first_name = $_GET["first_name"] ?? null;
-    $last_name = $_GET["last_name"] ?? null;
-    $shipping = $_GET["shipping"] ?? null;
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $email = $_POST["email"] ?? null;
+    $password = $_POST["password"] ?? null;
+    $confirm_password = $_POST["confirm_password"] ?? null;
+    $first_name = $_POST["first_name"] ?? null;
+    $last_name = $_POST["last_name"] ?? null;
+    $shipping = $_POST["shipping"] ?? null;
 
     if (is_null_or_blank($email)) {
         $errors[] = "L'adresse de courriel est requise.";
@@ -33,6 +33,12 @@ if ($_SERVER["REQUEST_METHOD"] === "GET") {
     if (is_null_or_empty($password)) {
         $errors[] = "Le mot de passe est requis.";
     }
+    if (is_null_or_empty($confirm_password)) {
+        $errors[] = "La confirmation du mot de passe est requise.";
+    }
+    if ($password !== $confirm_password) {
+        $errors[] = "Le mot de passe et la confirmation du mot de passe sont différents.";
+    }
     if (is_null_or_empty($first_name)) {
         $errors[] = "Le prénom est requis.";
     }
@@ -42,19 +48,14 @@ if ($_SERVER["REQUEST_METHOD"] === "GET") {
     if (is_null_or_empty($shipping)) {
         $errors[] = "L'adresse est requis.";
     }
-    else if (is_null_or_empty($password_confirmation)) {
-        $errors[] = "La confirmation du mot de passe est requise.";
-    }
-    else if ($password !== $password_confirmation) {
-        $errors[] = "Le mot de passe et la confirmation du mot de passe sont différents.";
-    }
+   
 
     if (empty($errors)) {
 
         if (!$userDAO->create_user($email, $password,$first_name, $last_name, $shipping)) {
             $errors[] = "Cet utilisateur existe déjà. Désirez-vous vous connecter ?";
         } else {
-            header("location:index.php?account_created=true");
+            header("location:index.php");
             exit;
         }
     }

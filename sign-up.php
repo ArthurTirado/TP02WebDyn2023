@@ -16,13 +16,13 @@ $db = connect_db();
 $userDAO = new UserDao($db);
 
 // Validation du formulaire.
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $email = $_POST["email"] ?? null;
-    $password = $_POST["password"] ?? null;
-    $password_confirmation = $_POST["password_confirmation"] ?? null;
-    $first_name = $_POST["first_name"] ?? null;
-    $last_name = $_POST["last_name"] ?? null;
-    $shipping = $_POST["shipping"] ?? null;
+if ($_SERVER["REQUEST_METHOD"] === "GET") {
+    $email = $_GET["email"] ?? null;
+    $password = $_GET["password"] ?? null;
+    $password_confirmation = $_GET["password_confirmation"] ?? null;
+    $first_name = $_GET["first_name"] ?? null;
+    $last_name = $_GET["last_name"] ?? null;
+    $shipping = $_GET["shipping"] ?? null;
 
     if (is_null_or_blank($email)) {
         $errors[] = "L'adresse de courriel est requise.";

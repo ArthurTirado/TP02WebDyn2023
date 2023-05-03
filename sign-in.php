@@ -8,12 +8,13 @@ require_once __DIR__."/src/userDAO.php";
 $email = "";
 $password = "";
 $errors = [];
+$display_errors = false;
 $db = connect_db();
 $userDAO = new UserDao($db);
 // Validation du formulaire.
-if ($_SERVER["REQUEST_METHOD"] === "GET") {
-    $email = $_GET["email"] ?? null;
-    $password = $_GET["password"] ?? null;
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $email = $_POST["email"] ?? null;
+    $password = $_POST["password"] ?? null;
 
     if (is_null_or_blank($email)) {
         $errors[] = "L'adresse de courriel est requise.";
@@ -31,7 +32,8 @@ if ($_SERVER["REQUEST_METHOD"] === "GET") {
         if (!$userDAO->check_user_exists($email, $password)) {
             $errors[] = "Cette combinaison de nom d'utilisateur et de mot de passe nous est inconnue. Désirez-vous vous créer un compte ?";
         } else {
-            header("location:index.php?account_logged=true");
+            $_SESSION["user"] = $email;
+            header("location:index.php");
             exit;
         }
     }

@@ -23,7 +23,7 @@
                     </ul>
                 </div>
             <?php } ?>
-            <form action="sign-in.php" method="get" class="sign-in-form">
+            <form action="sign-in.php" method="post" class="sign-in-form">
                <div class="flex">
                 <div>
                   <label class="block-label" for="email">Email:</label>
@@ -35,7 +35,7 @@
                 </div>
                </div>
               <div class="flex-space-between">
-                 <a href="sign-in.php">Créer une compte</a>
+                 <a href="sign-up.php">Créer une compte</a>
                  <input type="submit" class="default-button" value="Se connecter">
               </div>
             </form>

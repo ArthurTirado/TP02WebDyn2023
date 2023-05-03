@@ -12,8 +12,18 @@
         <div class="connect-block">
             <img src="img/brand-large.svg" alt="logo de la compagnie">
             <h2>Connexion</h2>
-            <div>Utiliser votre compte Ourson</div>
-            <form action="sign-in.php" method="get" class="sign-in-form">
+            <div>Créer votre compte Ourson</div>
+            <?php if (!empty($errors)) { ?>
+                <div class="alert">
+                    <h4 class="alert-heading">Erreur</h4>
+                    <ul>
+                        <?php foreach ($errors as $error) { ?>
+                            <li><?= $error ?></li>
+                        <?php } ?>
+                    </ul>
+                </div>
+            <?php } ?>
+            <form action="sign-up.php" method="post" class="sign-in-form">
                <div class="flex">
                     <div>
                         <label class="block-label" for="email">Email:</label>
@@ -21,9 +31,9 @@
                         <label class="block-label"for="confirm-password">Confirmation du mot de passe:</label>
                     </div>
                     <div>
-                        <input class="default-input block-form" type="text" name="email" id="email" placeholder="Adresse de courriel" required>
-                        <input class="default-input block-form" type="password" name="password" id="password" placeholder="********" required>
-                        <input class="default-input block-form" type="confirm-password" name="confirm-password" id="password" placeholder="********" required>
+                        <input class="default-input block-form" type="text" name="email" id="email" placeholder="Adresse de courriel" >
+                        <input class="default-input block-form" type="password" name="password" id="password" placeholder="********" >
+                        <input class="default-input block-form" type="confirm_password" name="confirm_password" id="confirm_password" placeholder="********" >
                     </div>
                 </div>
         
@@ -34,13 +44,13 @@
                         <label class="block-label"for="shipping">Adresse de livraison:</label>
                     </div>
                     <div>
-                        <input class="default-input block-form" type="text" name="first-name" id="first-name" placeholder="Prénom" required>
-                        <input class="default-input block-form" type="text" name="last-name" id="last-name" placeholder="Nom" required>
-                        <input class="default-input block-form" type="text" name="shipping" id="shipping" placeholder="Adresse de Livraison" required>
+                        <input class="default-input block-form" type="text" name="first_name" id="first_name" placeholder="Prénom" >
+                        <input class="default-input block-form" type="text" name="last_name" id="last_name" placeholder="Nom" >
+                        <input class="default-input block-form" type="text" name="shipping" id="shipping" placeholder="Adresse de Livraison" >
                     </div>
                 </div>
               <div class="flex-space-between">
-                 <a href="sign-up.php">Créer une compte</a>
+                 <a href="sign-in.php">J'ai dèja une compte</a>
                  <input type="submit" class="default-button" value="Se connecter">
               </div>
             </form>

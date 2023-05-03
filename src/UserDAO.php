@@ -11,9 +11,10 @@ class UserDao
 
     function create_user(string $email, string $password, $first_name, $last_name, $shipping) : bool {
         try {
+            $this->db->beginTransaction();
             $statement = $this ->db->prepare("INSERT INTO user(email, password, first_name, last_name, shipping_address ) VALUES (?,?,?,?,?)");
             $password = password_hash($password, PASSWORD_BCRYPT);
-            $statement->execute([$email, $password]);
+            $statement->execute([$email, $password,$first_name,$last_name,$shipping]);
             $this ->db->commit();
             return true;
         } catch (PDOException $e) {

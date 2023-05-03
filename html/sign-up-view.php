@@ -8,7 +8,7 @@
     <title>Connexion</title>
 </head>
 <body>
-    <main class="connect-main">
+    <main class="disconnect-main">
         <div class="connect-block">
             <img src="img/brand-large.svg" alt="logo de la compagnie">
             <h2>Connexion</h2>

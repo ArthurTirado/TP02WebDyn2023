@@ -200,12 +200,9 @@ footer{
     display: flex;
     align-items: center;
     justify-content: center;
-
-    min-height: 100vh;
 }
 
 .connect-block{
-    max-width: 1200px;
     padding: 20px;
     border: solid 1px #ddd;
     display: flex;
@@ -239,4 +236,10 @@ footer{
     flex-direction: column;
     align-items: center;
     margin: 100px auto;
+}
+
+.disconnect-main{
+    min-height: 100vh;
+    width: 1200px;
+    margin: auto;
 }

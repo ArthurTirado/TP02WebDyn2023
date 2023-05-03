@@ -11,9 +11,9 @@ $errors = [];
 $db = connect_db();
 $userDAO = new UserDao($db);
 // Validation du formulaire.
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $email = $_POST["email"] ?? null;
-    $password = $_POST["password"] ?? null;
+if ($_SERVER["REQUEST_METHOD"] === "GET") {
+    $email = $_GET["email"] ?? null;
+    $password = $_GET["password"] ?? null;
 
     if (is_null_or_blank($email)) {
         $errors[] = "L'adresse de courriel est requise.";

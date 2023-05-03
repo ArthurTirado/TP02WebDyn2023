@@ -14,7 +14,7 @@
             <h2>Connexion</h2>
             <div>Utiliser votre compte Ourson</div>
             <?php if (!empty($errors)) { ?>
-                <div class="alert" role="alert">
+                <div class="alert">
                     <h4 class="alert-heading">Erreur</h4>
                     <ul>
                         <?php foreach ($errors as $error) { ?>

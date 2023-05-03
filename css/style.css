@@ -212,19 +212,26 @@ footer{
 }
 
 .block-form, .block-label{
-    display:block;
+    display: inline-block;
     height: 48px;
+    max-width: 640px;
+    min-width: 100px;
     margin-bottom: 15px;
 }
 .block-label{
-    display: flex;
-    margin-right: 20px;
-    flex-direction: column;
-    justify-content: center;
+    margin: 0;
+    width: 300px;
+}
+.text-center{
+    text-align: center;
 }
 
 .sign-in-form{
-    padding-top: 25px;
+    max-width: 1024px;
+    margin: 1rem;
+    padding: 20px;
+    border: solid 1px #ddd;
+    border-radius: 0.5rem;
 }
 
 .continue-button{
@@ -238,8 +245,29 @@ footer{
     margin: 100px auto;
 }
 
-.disconnect-main{
-    min-height: 100vh;
-    width: 1200px;
-    margin: auto;
+.sign-up-main{
+    height: 100vh;
+    display: grid;
+    place-content: center;
+}
+
+.sign-up-form{
+    width: 576px;
+    display: grid;
+    gap: 0.5rem;
+}
+
+
+.sign-up-form-logo{
+    justify-self: center;
+}
+
+@media(min-width:576px){
+    .sign-up-form{
+        grid-template-columns: auto 1fr;
+    }
+
+    .grid-col-2{
+        grid-column: span 2;
+    }
 }

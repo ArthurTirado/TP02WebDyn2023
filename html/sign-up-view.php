@@ -15,27 +15,27 @@
             <div class="text-center grid-col-2">Utiliser votre compte Ourson</div>
             <h2 class="grid-col-2">Informations sur le compte</h2>
 
-            <label class="" for="email">Email:</label>
-            <input class="default-input" type="text" name="email" id="email" placeholder="Adresse de courriel" required>
+            <label for="email">Email:</label>
+            <input class="input-test" type="text" name="email" id="email" placeholder="Adresse de courriel" required>
             
-            <label class=""for="password">Mot de passe:</label>
-            <input class="default-input" type="password" name="password" id="password" placeholder="********" required>
+            <label for="password">Mot de passe:</label>
+            <input class="input-test" type="password" name="password" id="password" placeholder="********" required>
             
-            <label class=""for="confirm-password">Confirmation du mot de passe:</label>
-            <input class="default-input" type="confirm-password" name="confirm-password" id="confirm-password" placeholder="********" required>
+            <label for="confirm-password">Confirmation du mot de passe:</label>
+            <input class="input-test" type="confirm-password" name="confirm-password" id="confirm-password" placeholder="********" required>
 
-            <h2 class="grid-col-2">lol</h2>
+            <h2 class="grid-col-2">Informations sur la livraison</h2>
 
-            <label class=""for="first-name">Prénom:</label>                  
-            <input class="default-input" type="text" name="first-name" id="first-name" placeholder="Prénom" required>
+            <label for="first-name">Prénom:</label>                  
+            <input class="input-test" type="text" name="first-name" id="first-name" placeholder="Prénom" required>
             
-            <label class=""for="last-name">Nom:</label>
-            <input class="default-input" type="text" name="last-name" id="last-name" placeholder="Nom" required>
+            <label for="last-name">Nom:</label>
+            <input class="input-test" type="text" name="last-name" id="last-name" placeholder="Nom" required>
             
-            <label class=""for="shipping">Adresse de livraison:</label>
-            <input class="default-input" type="text" name="shipping" id="shipping" placeholder="Adresse de Livraison" required>
+            <label for="shipping">Adresse de livraison:</label>
+            <input class="input-test" type="text" name="shipping" id="shipping" placeholder="Adresse de Livraison" required>
             
-            <input type="submit" class="default-button grid-col-2" value="Créer un compte">
+            <input type="submit" class="blue-button button grid-col-2" value="Créer un compte">
         </form>
     </main>
     <footer>

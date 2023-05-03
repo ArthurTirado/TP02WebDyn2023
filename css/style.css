@@ -255,6 +255,10 @@ footer{
     width: 576px;
     display: grid;
     gap: 0.5rem;
+    margin: 1rem;
+    padding: 20px;
+    border: solid 1px #ddd;
+    border-radius: 0.5rem;
 }
 
 
@@ -270,4 +274,11 @@ footer{
     .grid-col-2{
         grid-column: span 2;
     }
+}
+
+.input-test{
+    height: 48px;
+    border-radius: 0.5rem;
+    padding: 0 10px;
+    border: 2px solid #eee;
 }

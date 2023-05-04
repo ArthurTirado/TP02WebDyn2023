@@ -23,7 +23,7 @@ footer{
 }
 
 .button{
-    display: block;
+    display: inline-block;
     text-decoration: none;
     text-align: center;
     color: #000000;
@@ -81,8 +81,7 @@ footer{
     display: flex;
     justify-items: center;
     align-items: center;
-    width: 900px;
-    margin: 0 auto;
+    justify-self: center;
 }
 
 .restrained-width{
@@ -140,10 +139,6 @@ footer{
     font-size: xx-large;
     padding-top: 20px;
     padding-bottom: 20px;
-}
-
-.default-button{
-    background-color: #eee;
 }
 
 .small-input{
@@ -242,6 +237,10 @@ footer{
     justify-self: center;
 }
 
+.delete-button{
+    align-self: self-end;
+}
+
 @media(min-width:576px){
     .sign-up-form{
         grid-template-columns: auto 1fr;
@@ -249,6 +248,10 @@ footer{
 
     .grid-col-2{
         grid-column: span 2;
+    }
+
+    .delete-button{
+        align-self: self-start;
     }
 }
 

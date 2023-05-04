@@ -16,7 +16,7 @@ $price = $product["price"];
     <header class="flex-space-between bottom-border">
         <a href="index.php"><img src="img/brand.svg" alt="logo de la compagnie"></a>
         <div class="flex-space-between">
-            <a href="cart.php"><img class="button grey-button shopping-cart" src="img/cart.svg"></a>
+            <a href="cart.php"><img class="button grey-button shopping-cart" src="img/cart.svg" alt="panier"></a>
             <?php if(is_null_or_blank($user)) {?>
                 <a href="sign-in.php" class="button blue-button connect">Connexion</a>
             <?php } else { ?>
@@ -29,24 +29,24 @@ $price = $product["price"];
             <div>
                 <img class="product-image" src="img/<?= $sku ?>.png" alt="<?= $name ?>">
             </div>
-           <div>
-            <div class="product-name">
-                <strong>
-                <?= $name ?>
-                </strong>
-             </div>
-             <div class="product-description">
-                 <?= $description ?>
-             </div>
-             <div class="price">
-                 <strong><?= $price?>$</strong>
-             </div>
-             <form action="index.php" method="get">
-                <input class="invisible" type="text" name="sku" id="sku" value="<?= $sku ?>">
-                <input type="number" class="restrained-width default-input" name="qte" id="qte" value="1" min="1">
-                <input type="submit" class="default-button small-button" value="Ajouter au panier">
-             </form>
-           </div>
+            <div>
+                <div class="product-name">
+                    <strong>
+                        <?= $name ?>
+                    </strong>
+                </div>
+                <div class="product-description">
+                    <?= $description ?>
+                </div>
+                <div class="price">
+                    <strong><?= $price?>$</strong>
+                </div>
+                <form action="index.php" method="get">
+                   <input class="invisible" type="text" name="sku" id="sku" value="<?= $sku ?>">
+                   <input type="number" class="restrained-width default-input" name="qte" id="qte" value="1" min="1">
+                   <input type="submit" class="button grey-button" value="Ajouter au panier">
+                </form>
+            </div>
         </div>
     </main>
     <footer>

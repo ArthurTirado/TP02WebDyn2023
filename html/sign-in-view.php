@@ -24,10 +24,10 @@
                 </div>
             <?php } ?>
 
-            <label class="block-label" for="email">Email:</label>
+            <label for="email">Email:</label>
             <input class="default-input" type="text" name="email" id="email" placeholder="Adresse de courriel">
 
-            <label class="block-label"for="password">Mot de passe:</label>
+            <label for="password">Mot de passe:</label>
             <input class="default-input" type="password" name="password" id="password" placeholder="********">
 
             <div class="flex-space-between grid-col-2">

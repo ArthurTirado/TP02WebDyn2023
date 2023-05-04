@@ -5,15 +5,13 @@ require_once __DIR__."/src/Order.php";
 require_once __DIR__."/src/ProductDAO.php";
 require_once __DIR__."/src/util.php";
 
-if(!isset($_SESSION["user"])){
-    session_start();
-}
+session_start();
 
 $cart = $_SESSION["cart"];
+$user = $_SESSION["user"];
 
 $db = connect_db();
 $product_dao = new ProductDao($db);
-$user = "Merlin";
 $sku = $_GET["sku"] ?? "";
 
 if(!is_null_or_blank($sku)){

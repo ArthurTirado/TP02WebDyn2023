@@ -79,9 +79,9 @@ footer{
 
 .products{
     display: flex;
-    justify-items: center;
     align-items: center;
     justify-self: center;
+    width: fit-content;
 }
 
 .restrained-width{
@@ -149,8 +149,12 @@ footer{
     margin: 1rem;
 }
 
+.product-main{
+    display: grid;
+}
+
 @media(max-width:900px){
-    .flex-product {
+    .products {
       flex-direction: column;
       align-items: center;
     }
@@ -218,15 +222,14 @@ footer{
 }
 
 .sign-up-main{
-    height: 100vh;
+    height: 100%;
     display: grid;
     place-content: center;
 }
 
 .sign-up-form{
-    width: 576px;
     display: grid;
-    margin: 1rem;
+    margin: 1rem 0;
     padding: 20px;
     border: solid 1px #ddd;
     border-radius: 0.5rem;
@@ -243,6 +246,7 @@ footer{
 
 @media(min-width:576px){
     .sign-up-form{
+        width: 550px;
         grid-template-columns: auto 1fr;
     }
 

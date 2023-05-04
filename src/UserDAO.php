@@ -39,4 +39,37 @@ class UserDao
             return false;
         }
     }
+
+    function get_user_id(string $user){
+        try {
+            $statement = $this->db->prepare("SELECT id FROM user WHERE email = ?");
+            $statement->execute([$user]);
+            $result = $statement->fetch();
+            return $result[0];
+        } catch (PDOException $e) {
+            exit("Unable to get the users id from database :{$e->getMessage()}");
+        }
+    }
+
+    function get_user_name(int $user_id){
+        try {
+            $statement = $this->db->prepare("SELECT first_name FROM user WHERE id = ?");
+            $statement->execute([$user_id]);
+            $result = $statement->fetch();
+            return $result[0];
+        } catch (PDOException $e) {
+            exit("Unable to get the users name from database :{$e->getMessage()}");
+        }
+    }
+
+    function get_user_last_name(int $user_id){
+        try {
+            $statement = $this->db->prepare("SELECT last_name FROM user WHERE id = ?");
+            $statement->execute([$user_id]);
+            $result = $statement->fetch();
+            return $result[0];
+        } catch (PDOException $e) {
+            exit("Unable to get the users last name from database :{$e->getMessage()}");
+        }
+    }
 }

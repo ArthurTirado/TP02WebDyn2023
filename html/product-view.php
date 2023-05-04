@@ -24,8 +24,8 @@ $price = $product["price"];
             <?php } ?>
         </div>
     </header>
-    <main class="global-margin">
-        <div class="products flex-product">
+    <main class="product-main global-margin">
+        <div class="products">
             <div>
                 <img class="product-image" src="img/<?= $sku ?>.png" alt="<?= $name ?>">
             </div>

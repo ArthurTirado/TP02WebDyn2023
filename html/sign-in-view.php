@@ -25,14 +25,14 @@
             <?php } ?>
 
             <label class="block-label" for="email">Email:</label>
-            <input class="default-input block-form" type="text" name="email" id="email" placeholder="Adresse de courriel">
+            <input class="default-input" type="text" name="email" id="email" placeholder="Adresse de courriel">
 
             <label class="block-label"for="password">Mot de passe:</label>
-            <input class="default-input block-form" type="password" name="password" id="password" placeholder="********">
+            <input class="default-input" type="password" name="password" id="password" placeholder="********">
 
             <div class="flex-space-between grid-col-2">
-                <a href="sign-up.php">Créer une compte</a>
-                <input type="submit" class="default-button" value="Se connecter">
+                <a class="create-account-hyperlink" href="sign-up.php">Créer une compte</a>
+                <input type="submit" class="grey-button button" value="Se connecter">
             </div>
             </form>
         </div>

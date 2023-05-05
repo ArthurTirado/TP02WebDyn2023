@@ -32,15 +32,15 @@
             <input class="default-input" type="password" name="password" id="password" placeholder="********">
             
             <label for="confirm-password">Confirmation du mot de passe:</label>
-            <input class="default-input" type="password" name="confirm-password" id="confirm-password" placeholder="********">
+            <input class="default-input" type="password" name="confirm_password" id="confirm_password" placeholder="********">
 
             <h2 class="grid-col-2">Informations sur la livraison</h2>
 
             <label for="first-name">Prénom:</label>                  
-            <input class="default-input" type="text" name="first-name" id="first-name" placeholder="Prénom">
+            <input class="default-input" type="text" name="first_name" id="first_name" placeholder="Prénom">
             
             <label for="last-name">Nom:</label>
-            <input class="default-input" type="text" name="last-name" id="last-name" placeholder="Nom">
+            <input class="default-input" type="text" name="last_name" id="last_name" placeholder="Nom">
             
             <label for="shipping">Adresse de livraison:</label>
             <input class="default-input" type="text" name="shipping" id="shipping" placeholder="Adresse de Livraison">

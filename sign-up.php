@@ -21,9 +21,9 @@ $userDAO = new UserDao($db);
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = $_POST["email"] ?? null;
     $password = $_POST["password"] ?? null;
-    $confirm_password = $_POST["confirm_password"] ?? null;
-    $first_name = $_POST["first_name"] ?? null;
-    $last_name = $_POST["last_name"] ?? null;
+    $confirm_password = $_POST["confirm-password"] ?? null;
+    $first_name = $_POST["first-name"] ?? null;
+    $last_name = $_POST["last-name"] ?? null;
     $shipping = $_POST["shipping"] ?? null;
 
     if (is_null_or_blank($email)) {

@@ -9,7 +9,7 @@
 </head>
 <body>
     <main class="sign-up-main">
-        <form action="sign-up.php" method="post" class="sign-up-form">
+        <form class="sign-up-form" action="sign-up.php" method="post">
             <a class="sign-up-form-logo grid-col-2" href="index.php"><img src="img/brand-large.svg" alt="logo de la compagnie"></a>
             <h1 class="text-center grid-col-2">Connexion</h1>
             <div class="text-center grid-col-2">Utiliser votre compte Ourson</div>

@@ -265,4 +265,25 @@ footer{
     .grid-col-2{
         grid-column: span 2;
     }
+
+    .delete-button{
+        align-self: self-start;
+    }
+}
+
+.sign-up-form *{
+    margin: 0.5rem;
+}
+
+.default-input{
+    height: 48px;
+    border-radius: 0.5rem;
+    padding: 0 10px;
+    border: 2px solid #eee;
+}
+
+.create-account-hyperlink{
+    text-decoration: none;
+    color: #0075c9;
+    align-self: center;
 }

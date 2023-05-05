@@ -9,12 +9,12 @@
 </head>
 <body>
     <main class="sign-up-main">
-        <form action="sign-in.php" method="post" class="sign-up-form">
+        <form action="sign-up.php" method="post" class="sign-up-form">
             <a class="sign-up-form-logo grid-col-2" href="index.php"><img src="img/brand-large.svg" alt="logo de la compagnie"></a>
             <h1 class="text-center grid-col-2">Connexion</h1>
             <div class="text-center grid-col-2">Utiliser votre compte Ourson</div>
             <?php if (!empty($errors)) { ?>
-                <div class="alert">
+                <div class="alert grid-col-2">
                     <h4 class="alert-heading">Erreur</h4>
                     <ul>
                         <?php foreach ($errors as $error) { ?>
@@ -26,24 +26,24 @@
             <h2 class="grid-col-2">Informations sur le compte</h2>
 
             <label for="email">Email:</label>
-            <input class="default-input" type="text" name="email" id="email" placeholder="Adresse de courriel" required>
+            <input class="default-input" type="text" name="email" id="email" placeholder="Adresse de courriel">
             
             <label for="password">Mot de passe:</label>
-            <input class="default-input" type="password" name="password" id="password" placeholder="********" required>
+            <input class="default-input" type="password" name="password" id="password" placeholder="********">
             
             <label for="confirm-password">Confirmation du mot de passe:</label>
-            <input class="default-input" type="confirm-password" name="confirm-password" id="confirm-password" placeholder="********" required>
+            <input class="default-input" type="password" name="confirm-password" id="confirm-password" placeholder="********">
 
             <h2 class="grid-col-2">Informations sur la livraison</h2>
 
             <label for="first-name">Prénom:</label>                  
-            <input class="default-input" type="text" name="first-name" id="first-name" placeholder="Prénom" required>
+            <input class="default-input" type="text" name="first-name" id="first-name" placeholder="Prénom">
             
             <label for="last-name">Nom:</label>
-            <input class="default-input" type="text" name="last-name" id="last-name" placeholder="Nom" required>
+            <input class="default-input" type="text" name="last-name" id="last-name" placeholder="Nom">
             
             <label for="shipping">Adresse de livraison:</label>
-            <input class="default-input" type="text" name="shipping" id="shipping" placeholder="Adresse de Livraison" required>
+            <input class="default-input" type="text" name="shipping" id="shipping" placeholder="Adresse de Livraison">
             
             <input type="submit" class="blue-button button grid-col-2" value="Créer un compte">
         </form>

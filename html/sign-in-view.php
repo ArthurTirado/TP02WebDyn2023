@@ -10,7 +10,7 @@
 <body>
     <main class="connect-main">
         <div class="connect-block">
-            <img src="img/brand-large.svg" alt="logo de la compagnie">
+            <a href="index.php"><img src="img/brand-large.svg" alt="logo de la compagnie"></a>
             <h2>Connexion</h2>
             <div>Utiliser votre compte Ourson</div>
             <?php if (!empty($errors)) { ?>

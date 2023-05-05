@@ -4,6 +4,7 @@ require_once __DIR__ . "/src/util.php";
 require_once __DIR__ . "/src/UserDAO.php";
 require_once __DIR__."/src/database.php";
 
+session_start();
 // Valeurs par défaut.
 $email = "";
 $password = "";
@@ -14,6 +15,7 @@ $shipping = "";
 $errors = [];
 $db = connect_db();
 $userDAO = new UserDao($db);
+
 
 // Validation du formulaire.
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -60,7 +62,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
     }
 }
-if(!isset($_SESSION["user"])){
-    session_start();
-}
+
+
 require_once __DIR__."/html/sign-up-view.php";

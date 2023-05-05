@@ -11,7 +11,7 @@
     <header class="flex-space-between bottom-border">
         <a href="index.php"><img src="img/brand.svg" alt="logo de la compagnie"></a>
         <div class="flex-space-between">
-            <a href="cart.php"><img class="button grey-button shopping-cart" src="img/cart.svg"></a>
+            <a href="cart.php"><img class="button grey-button shopping-cart" src="img/cart.svg" alt="panier"></a>
             <?php if(is_null_or_blank($user)) {?>
                 <a href="sign-in.php" class="button blue-button connect">Connexion</a>
             <?php } else { ?>

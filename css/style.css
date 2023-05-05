@@ -23,11 +23,13 @@ footer{
 }
 
 .button{
-    display: block;
+    display: inline-block;
     text-decoration: none;
     text-align: center;
     color: #000000;
+    border: none;
     border-radius: 0.5rem;
+    padding: 0 1rem;
     height: 48px;
 }
 
@@ -77,10 +79,9 @@ footer{
 
 .products{
     display: flex;
-    justify-items: center;
     align-items: center;
-    width: 900px;
-    margin: 0 auto;
+    justify-self: center;
+    width: fit-content;
 }
 
 .restrained-width{
@@ -140,26 +141,6 @@ footer{
     padding-bottom: 20px;
 }
 
-.default-button, .default-input{
-    height: 48px;
-    border: none;
-    font-size: medium;
-    font-weight: bold;
-    border-radius: 0.5rem;
-    margin-bottom: auto;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-.default-button{
-    background-color: #eee;
-}
-
-.default-input{
-    border: 2px solid #eee;
-    
-}
-
 .small-input{
     width: 160px;
 }
@@ -168,8 +149,12 @@ footer{
     margin: 1rem;
 }
 
+.product-main{
+    display: grid;
+}
+
 @media(max-width:900px){
-    .flex-product {
+    .products {
       flex-direction: column;
       align-items: center;
     }
@@ -220,18 +205,9 @@ footer{
 }
 .block-label{
     margin: 0;
-    width: 300px;
 }
 .text-center{
     text-align: center;
-}
-
-.sign-in-form{
-    max-width: 1024px;
-    margin: 1rem;
-    padding: 20px;
-    border: solid 1px #ddd;
-    border-radius: 0.5rem;
 }
 
 .continue-button{
@@ -246,19 +222,26 @@ footer{
 }
 
 .sign-up-main{
-    height: 100vh;
+    height: 100%;
     display: grid;
     place-content: center;
 }
 
 .sign-up-form{
-    width: 576px;
     display: grid;
-    gap: 0.5rem;
+    margin: 1rem 0;
+    padding: 20px;
+    border: solid 1px #ddd;
+    border-radius: 0.5rem;
 }
 .sign-up-form-logo{
     justify-self: center;
 }
+
+.delete-button{
+    align-self: self-end;
+}
+
 .alert{
     border-radius: 0.5rem;
     background-color: #dc3545;
@@ -272,13 +255,14 @@ footer{
     font-size: xx-large;
     margin: 15px 0px 0px 0px;
 }
+
 @media(min-width:576px){
     .sign-up-form{
+        width: 550px;
         grid-template-columns: auto 1fr;
     }
 
     .grid-col-2{
         grid-column: span 2;
     }
-
 }

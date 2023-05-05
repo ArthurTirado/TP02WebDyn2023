@@ -9,12 +9,12 @@
 </head>
 <body>
     <main class="connect-main">
-        <div class="connect-block">
-            <a href="index.php"><img src="img/brand-large.svg" alt="logo de la compagnie"></a>
-            <h2>Connexion</h2>
-            <div>Utiliser votre compte Ourson</div>
+        <form action="sign-in.php" method="post" class="sign-up-form">
+        <a class="sign-up-form-logo grid-col-2" href="index.php"><img  src="img/brand-large.svg" alt="logo de la compagnie"></a>
+            <h1 class="text-center grid-col-2">Connexion</h1>
+            <div class="text-center grid-col-2">Utiliser votre compte Ourson</div>
             <?php if (!empty($errors)) { ?>
-                <div class="alert">
+                <div class="alert grid-col-2">
                     <h4 class="alert-heading">Erreur</h4>
                     <ul>
                         <?php foreach ($errors as $error) { ?>
@@ -23,21 +23,17 @@
                     </ul>
                 </div>
             <?php } ?>
-            <form action="sign-in.php" method="post" class="sign-in-form">
-               <div class="flex">
-                <div>
-                  <label class="block-label" for="email">Email:</label>
-                  <label class="block-label"for="password">Mot de passe:</label>
-                </div>
-                <div>
-                 <input class="default-input block-form" type="text" name="email" id="email" placeholder="Adresse de courriel">
-                  <input class="default-input block-form" type="password" name="password" id="password" placeholder="********">
-                </div>
-               </div>
-              <div class="flex-space-between">
-                 <a href="sign-up.php">Créer une compte</a>
-                 <input type="submit" class="default-button" value="Se connecter">
-              </div>
+
+            <label for="email">Email:</label>
+            <input class="default-input" type="text" name="email" id="email" placeholder="Adresse de courriel">
+
+            <label for="password">Mot de passe:</label>
+            <input class="default-input" type="password" name="password" id="password" placeholder="********">
+
+            <div class="flex-space-between grid-col-2">
+                <a class="create-account-hyperlink" href="sign-up.php">Créer une compte</a>
+                <input type="submit" class="grey-button button" value="Se connecter">
+            </div>
             </form>
         </div>
     </main>

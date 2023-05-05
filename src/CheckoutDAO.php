@@ -25,20 +25,20 @@ class CheckoutDao
 
     function get_order_id(int $user_id){
         try {
-            $this->db->beginTransaction();
             $statement = $this->db->prepare("SELECT id FROM `order` WhERE user_id = ?");
             $statement->execute([$user_id]);
-            $this->db->commit();
+            $result = $statement->fetch();
+            return $result["id"];
         } catch (PDOException $e) {
             $this->db->rollBack();
             exit("Unable to add order into database :{$e->getMessage()}");
         }
     }
 
-    function add_order_item(int $order_id, string $sku, int $qte){
+    function add_order_item(int $order_id, int $sku, int $qte){
         try {
             $this->db->beginTransaction();
-            $statement = $this->db->prepare("INSERT INTO `order`(order_id, product_sku, quantity) VALUES (?,?,?)");
+            $statement = $this->db->prepare("INSERT INTO order_item(order_id, product_sku, quantity) VALUES (?,?,?)");
             $statement->execute([$order_id, $sku, $qte]);
             $this->db->commit();
         } catch (PDOException $e) {

@@ -45,7 +45,7 @@ class UserDao
             $statement = $this->db->prepare("SELECT id FROM user WHERE email = ?");
             $statement->execute([$user]);
             $result = $statement->fetch();
-            return $result[0];
+            return $result["id"];
         } catch (PDOException $e) {
             exit("Unable to get the users id from database :{$e->getMessage()}");
         }
@@ -56,7 +56,7 @@ class UserDao
             $statement = $this->db->prepare("SELECT first_name FROM user WHERE id = ?");
             $statement->execute([$user_id]);
             $result = $statement->fetch();
-            return $result[0];
+            return $result["first_name"];
         } catch (PDOException $e) {
             exit("Unable to get the users name from database :{$e->getMessage()}");
         }
@@ -67,7 +67,7 @@ class UserDao
             $statement = $this->db->prepare("SELECT last_name FROM user WHERE id = ?");
             $statement->execute([$user_id]);
             $result = $statement->fetch();
-            return $result[0];
+            return $result["last_name"];
         } catch (PDOException $e) {
             exit("Unable to get the users last name from database :{$e->getMessage()}");
         }

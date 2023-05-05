@@ -20,7 +20,7 @@
         </div>
     </header>
     <main class="flex confirm">
-        <h2>Merci pour votre commande <?php$name $last_name?> !</h2>
+        <h2>Merci pour votre commande <?=$name?> <?=$last_name?> !</h2>
         <a href="index.php" class="button blue-button continue-button">Continuer de magasiner</a>
     </main>
     <footer>
